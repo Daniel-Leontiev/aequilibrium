@@ -1,31 +1,46 @@
-# AngularQuickstart
+# Aequilibrium Demo by Daniel Leontiev
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.24.
+Install dependencies `npm install`
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Running the Demo
+Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`.
 
-## Code scaffolding
+Both assignments are web application, developed in Angular 9.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+On the home page you will see two buttons `Castle` and `Transformation`
 
-## Build
+Click on eather one to see the appropriate demo, with interactive input and graphical display.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Running unit tests for Castle demo
 
-## Running unit tests
+Run `npm run test` to execute the unit tests via [Karma]
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Unit tests for Castle demo located here `src/app/home/castle/view/castle-view.spec.ts`
 
-## Running end-to-end tests
+The test runs agains utility functions defined in `src/app/home/castle/view/castle-view.config.ts`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+## Note on Transformation Demo
+The acceptance criteria, Output of a battle missing 3 scenarios:
 
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
-
-## Further help
-
-To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Scenario 1: 
+  Lets say there are 5 transformers, 2 Autobots and 3 Decepticons
+  
+  If 2 Autobots and 2 Decepticons have mutual destruction, in the event of a Tie
+  
+  this leavs 1 Decepticon, a survivor but not on a loosing team.
+  
+  This event is show by the demo as (Undetermined! Survivor via skipped battle)
+  
+Scenario 2:
+  Lets say there are 4 transformers, 2 Autobots and 2 Decepticons
+  
+  If all have mutual destruction, in the event of a Tie (for example)
+  
+  There are not winning or loosing team.
+  
+  This event is shown by the demo as (All competitors destroyed No Survivors)
+  
+Additonal Scenarios:
+  No survivors for the loosing team, is a possibility.
+  
+  More than one Bot on the winning team.
