@@ -1,0 +1,23 @@
+<div
+  *ngIf="(componentData$ | async) as data"
+  class="main-container">
+  <div
+    *ngIf="data.length; else noData"
+    class="elements-container">
+
+    <ng-container *ngFor="let item of data">
+      <cmp-castle-view-histogram-element
+        [value]="item">
+      </cmp-castle-view-histogram-element>
+
+      <cmp-castle-view-histogram-element
+        *ngFor="let platformItem of item?.platformElements"
+        [value]="platformItem">
+      </cmp-castle-view-histogram-element>
+    </ng-container>
+  </div>
+</div>
+
+<ng-template #noData>
+  <span class="no-data">No Data</span>
+</ng-template>
