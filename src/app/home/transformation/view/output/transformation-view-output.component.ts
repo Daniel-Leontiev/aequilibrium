@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { TransformationViewFacade } from '../transformation-view.facade';
-import { TransformersBattleResultsTeam, TransformerStatsProperties, TransformerStatus, TransformersViewDefinition, TransformerTeamLabel } from '../transformation-view.config';
 import { convertEnumToArray, KeyValuePair } from '../../../../core/utils';
+import { TransformersBattleResultsTeam, TransformerStatsProperties, TransformerStatus, TransformersViewDefinition, TransformerTeamLabel } from '../transformation-view.config';
+import { TransformationViewFacade } from '../transformation-view.facade';
 
 interface TransformerStatusUi {
   name: string;
@@ -12,7 +12,8 @@ interface TransformerStatusUi {
   selector: 'cmp-transformation-view-output',
   templateUrl: './transformation-view-output.component.html',
   styleUrls: ['./transformation-view-output.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class TransformationViewOutputComponent {
   readonly hadData$ = this.transformationViewFacade.hadData$;

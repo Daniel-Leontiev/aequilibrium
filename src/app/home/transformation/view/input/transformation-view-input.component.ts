@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { CustomControlDestroyNotifier } from '../../../../core/controls/custom-control-destroy-notifier';
 import { tap } from 'rxjs/operators';
-import { TransformationViewFacade } from '../transformation-view.facade';
+import { CustomControlDestroyNotifier } from '../../../../core/controls/custom-control-destroy-notifier';
 import { isTransformersInputValid } from '../transformation-view.config';
+import { TransformationViewFacade } from '../transformation-view.facade';
 
 @Component({
   selector: 'cmp-transformation-view-input',
   templateUrl: './transformation-view-input.component.html',
   styleUrls: ['./transformation-view-input.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class TransformationViewInputComponent extends CustomControlDestroyNotifier implements OnInit {
   @Input() maxLength = 200;

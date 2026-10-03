@@ -5,7 +5,8 @@ import { CastleViewDefinition } from '../../castle-view.config';
   selector: 'cmp-castle-view-histogram-element',
   templateUrl: './castle-view-histogram-element.component.html',
   styleUrls: ['./castle-view-histogram-element.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class CastleViewHistogramElementComponent {
   @Input() value: CastleViewDefinition;

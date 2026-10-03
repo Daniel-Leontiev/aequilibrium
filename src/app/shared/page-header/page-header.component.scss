@@ -1,9 +1,10 @@
-@import "helpers/mixins";
+@use "helpers/variables" as *;
+@use "helpers/mixins" as *;
 
 :host {
   @include default-header();
 
-  > header {
+  >header {
     display: flex;
     align-items: center;
 

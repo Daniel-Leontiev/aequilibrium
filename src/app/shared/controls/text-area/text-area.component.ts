@@ -9,7 +9,8 @@ import { buildControlValueAccessorProvider } from '../../../core/controls/custom
   providers: [
     buildControlValueAccessorProvider(TextAreaComponent)
   ],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class TextAreaComponent extends CustomControl {
   @Input() maxLength = 200;
@@ -45,7 +46,7 @@ export class TextAreaComponent extends CustomControl {
     this.CustomControlUpdateModel();
   }
 
-  protected get templateNamesToInitialize(): string [] {
+  protected get templateNamesToInitialize(): string[] {
     return [this.errorTemplateName];
   }
 

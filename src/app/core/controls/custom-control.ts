@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   ChangeDetectorRef,
   ContentChildren,
+  Directive,
   EventEmitter,
   Input, OnChanges, OnDestroy,
   OnInit,
@@ -11,9 +12,10 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { CustomControlDestroyNotifier } from './custom-control-destroy-notifier';
-import { CustomControlTemplateDirective } from './custom-control-template.directive';
 import { customControlTemplateNullReference, CustomControlTemplateReference } from './custom-control-template.config';
+import { CustomControlTemplateDirective } from './custom-control-template.directive';
 
+@Directive()
 export abstract class CustomControl
   extends CustomControlDestroyNotifier
   implements OnInit, OnDestroy, AfterViewInit, ControlValueAccessor, OnChanges {
@@ -51,10 +53,10 @@ export abstract class CustomControl
     this.CustomControlChanges(changes);
   }
 
-  protected CustomControlInit(): void {}
-  protected CustomControlAfterViewInit(): void {}
-  protected CustomControlDestroy(): void {}
-  protected CustomControlChanges(changes: SimpleChanges): void {}
+  protected CustomControlInit(): void { }
+  protected CustomControlAfterViewInit(): void { }
+  protected CustomControlDestroy(): void { }
+  protected CustomControlChanges(changes: SimpleChanges): void { }
 
   writeValue(value: any): void {
     this.CustomControlInitializeModelData(value);
@@ -82,8 +84,8 @@ export abstract class CustomControl
     this.onModelChange(data);
   }
 
-  onModelChange: Function = () => {};
-  onModelTouched: Function = () => {};
+  onModelChange: Function = () => { };
+  onModelTouched: Function = () => { };
 
   protected abstract CustomControlInitializeModelData(value: any): void;
 

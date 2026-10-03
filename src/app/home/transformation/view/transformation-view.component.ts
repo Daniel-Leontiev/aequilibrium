@@ -5,6 +5,7 @@ import { TransformationViewFacade } from './transformation-view.facade';
   templateUrl: './transformation-view.component.html',
   styleUrls: ['./transformation-view.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
   providers: [TransformationViewFacade]
 })
 export class TransformationViewComponent {

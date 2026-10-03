@@ -5,7 +5,8 @@ import { CastleViewFacade } from '../castle-view.facade';
   selector: 'cmp-castle-view-output',
   templateUrl: './castle-view-output.component.html',
   styleUrls: ['./castle-view-output.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class CastleViewOutputComponent {
   readonly componentData$ = this.castleViewFacade.componentData$;

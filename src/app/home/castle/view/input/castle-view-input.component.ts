@@ -1,15 +1,16 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { CastleViewFacade } from '../castle-view.facade';
 import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { CustomControlDestroyNotifier } from '../../../../core/controls/custom-control-destroy-notifier';
 import { tap } from 'rxjs/operators';
+import { CustomControlDestroyNotifier } from '../../../../core/controls/custom-control-destroy-notifier';
 import { isCastleInputDataValid } from '../castle-view.config';
+import { CastleViewFacade } from '../castle-view.facade';
 
 @Component({
   selector: 'cmp-castle-view-input',
   templateUrl: './castle-view-input.component.html',
   styleUrls: ['./castle-view-input.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class CastleViewInputComponent extends CustomControlDestroyNotifier implements OnInit {
   @Input() maxLength = 200;

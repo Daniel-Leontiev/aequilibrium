@@ -1,5 +1,5 @@
-@import "helpers/mixins";
-@import "helpers/variables";
+@use "helpers/mixins" as *;
+@use "helpers/variables" as *;
 
 :host {
   border: 1px dotted $color-accent-primary;
@@ -69,7 +69,7 @@
                   .stat-value {
                     width: 100px;
                     display: flex;
-                    background-image: linear-gradient(to right, yellow , red);
+                    background-image: linear-gradient(to right, yellow, red);
 
                     .value {
                       display: flex;
@@ -83,7 +83,7 @@
                   }
                 }
 
-                .stat + .stat {
+                .stat+.stat {
                   margin-top: 2px;
                 }
               }
@@ -103,12 +103,12 @@
             }
           }
 
-          .transformer + .transformer {
+          .transformer+.transformer {
             margin-top: $spacing-xs;
           }
         }
 
-        .transformer-team + .transformer-team {
+        .transformer-team+.transformer-team {
           margin-left: 150px;
         }
       }

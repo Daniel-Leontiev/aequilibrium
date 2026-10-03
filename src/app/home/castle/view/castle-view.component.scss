@@ -1,4 +1,4 @@
-@import "helpers/variables";
+@use "helpers/variables" as *;
 
 :host {
   width: 100%;

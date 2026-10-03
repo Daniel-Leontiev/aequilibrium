@@ -1,3 +1,5 @@
+@use "sass:map";
+
 $variables: (
   --color-input: var(--color-input),
 
@@ -18,7 +20,7 @@ $variables: (
 );
 
 @function tvar($variable) {
-  @return map-get($variables, $variable);
+  @return map.get($variables, $variable);
 }
 
 @mixin initialize-default-theme() {
@@ -40,7 +42,9 @@ $variables: (
     --color-status-warning: #FFD500;
     --color-status-error: #E02D30;
   }
-};
+}
+
+;
 
 // Fonts
 $font-family-primary: 'Open Sans', Arial, Sans-Serif;
@@ -83,9 +87,9 @@ $media-mobile-tablet: "(max-width: #{$width-tablet - 1})" !default;
 $media-desktop: "(min-width: #{$width-tablet})" !default;
 
 // Spacing
-$spacing-xs: 0.8rem;           // 8px
-$spacing-s: $spacing-xs * 2;   // 16px
-$spacing-m: $spacing-xs * 3;   // 24px
-$spacing-l: $spacing-xs * 4;   // 32px
-$spacing-xl: $spacing-xs * 5;  // 40px
+$spacing-xs: 0.8rem; // 8px
+$spacing-s: $spacing-xs * 2; // 16px
+$spacing-m: $spacing-xs * 3; // 24px
+$spacing-l: $spacing-xs * 4; // 32px
+$spacing-xl: $spacing-xs * 5; // 40px
 $spacing-xxl: $spacing-xs * 8; // 64px

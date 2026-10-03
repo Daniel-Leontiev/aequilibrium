@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 @Component({
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false
 })
 export class HomeComponent {
   constructor(
